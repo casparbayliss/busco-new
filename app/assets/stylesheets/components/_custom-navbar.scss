@@ -1,0 +1,33 @@
+#custom-navbar {
+    position: fixed;
+    top: 50px;
+    display: flex;
+    // flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    animation-duration: 4s;
+
+    a {
+        color: white;
+        padding-bottom: 10px;
+    }
+
+    a:hover {
+        text-decoration: none;
+        border-bottom: solid white 2px;
+        font-size: 1.6rem;
+    }
+}
+
+.custom-navbar-column {
+    margin: 0px 50px 50px 50px;
+    width: 100px;
+    text-align: center;
+}
+
+
+.fixed-navbar {
+    position: fixed;
+}

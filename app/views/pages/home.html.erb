@@ -1,31 +1,17 @@
 <div class="container">
+    <!-- devise sign up/sign in buttons -->
+    <%= render 'components/sign-in-buttons' %>
+    <!-- custom navbar that I created just for the front page -->
+    <%= render 'components/custom-navbar' %>
+    <!-- render the mouse animation -->
+    <%= render 'components/mouse-animation' %>
+    <!-- section one of front page, with title and search -->
     <section id="section-one">
-        <!-- <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(heroimage.jpg);">
-                <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-                <p>Change your life and learn to code at one of our campuses around the world.</p>
-                <a class="btn btn-flat" href="#">Apply now</a>
-        </div>-->
-        <div class="hero-image-div ">
-            <h1>Welcome to Busco</h1>
-            <h3>Search for nearby products</h3>
-            <h3>Returning consumers to the local high street</h3>
-            <form novalidate="novalidate" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-                <div class="search-form-control form-group animate">
-                    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-                    <button name="button" type="submit" class="btn btn-flat animate__animated animate__shakeX">
-                    <i class="fas fa-search"></i> Search for local products
-                    </button>
-                </div>
-            </form>
-        </div>
+        <%= render 'components/section-one-div' %>
     </section>
+    <!-- section two of front page, with the introduction to the site -->
     <section id="section-two">
-        <div class="hero-image-div">
-            <h1>"Buscar": to look for (Spanish)</h1>
-            <h4>Shopping in Spain remains a personal experience.</h4>
-            <h4>Most stores remain family-owned, with the older parts of cities remaining traditional</h4>
-            <h4>The Spanish have stayed true to the smaller business in a way lost to most of the world</h4>
-        </div>
+        <%= render 'components/section-two-div' %>
     </section>
     <section id="section-three">
         <h1>Section 3</h1>
