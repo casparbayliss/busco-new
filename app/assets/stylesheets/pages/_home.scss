@@ -1,4 +1,4 @@
-.container {
+#frontpage-main-container {
     padding-right: 0px;
     padding-left: 0px;
     max-width: 100%;
@@ -35,9 +35,24 @@ section {
 }
 
 #section-three {
-    background-color: green;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(venice-market.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+        #frontpage-sectionthree-container {
+            max-width: 80%;
+            max-height: 80%;
+            border: solid red 10px;
+        
+    }
+
+
 }
 
 #section-four {
     background-color:black;
+}
+
+a {
+    color: white;
 }
