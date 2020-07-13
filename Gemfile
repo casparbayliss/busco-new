@@ -66,3 +66,4 @@ gem 'bootstrap-sass'
 gem 'geocoder'
 gem 'pundit'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'faker'

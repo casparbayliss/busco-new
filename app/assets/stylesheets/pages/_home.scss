@@ -35,6 +35,16 @@ section {
 }
 
 #section-three {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(greengrocer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-four {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(venice-market.jpg);
     background-repeat: no-repeat;
     background-size: cover; 
@@ -45,8 +55,6 @@ section {
             border: solid red 10px;
         
     }
-
-
 }
 
 #section-four {
@@ -54,5 +62,9 @@ section {
 }
 
 a {
+    color: white;
+}
+
+a:hover {
     color: white;
 }

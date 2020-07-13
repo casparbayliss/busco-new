@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
 # CASPAR AND HIS SHOP
 caspar = User.create(
@@ -15,7 +16,7 @@ caspar = User.create(
     password_confirmation: "topsecret",
     shopkeeper: true
 )
-# Caspar's shop
+# Caspar's shop - Godamling
 Shop.create(
     user_id: 1,
     name: "Caspar's shoe shop",
@@ -74,7 +75,7 @@ jonathan = User.create(
     password_confirmation: "topsecret",
     shopkeeper: true
 )
-#Jonathan's shop
+#Jonathan's shop - Godalming
 Shop.create(
     user_id: 2,
     name: "Godalming food store",
@@ -125,7 +126,7 @@ sarah = User.create(
     password_confirmation: "topsecret",
     shopkeeper: true
 )
-# Sarah's shop
+# Sarah's shop - Godalming
 Shop.create(
     user_id: 3,
     name: "Milford Butchers",
@@ -159,6 +160,65 @@ Product.create(
     weight: 2,
 )
 
+# CHARLIE AND HIS SHOP
+charlie = User.create(
+    first_name: "Charlie",
+    last_name: "Richard",
+    email: "charlie@busco.com",
+    password: "topsecret",
+    password_confirmation: "topsecret",
+    shopkeeper: true
+)
+# Charlie's shop - Godamling
+Shop.create(
+    user_id: 4,
+    name: "Charlie's vegan store",
+    category: "Food",
+    address: "33 Jermyn Street, London",
+    description: "Vegan produce"
+)
+# Charlie's products
+Product.create(
+    shop_id: 4,
+    name: "Bean burgers",
+    price: 3,
+    quantity: 6,
+    description: "Mexican black bean burgers",
+    weight: 0.8,
+)
+Product.create(
+    shop_id: 4,
+    name: "Beetroot burgers",
+    price: 4,
+    quantity: 6,
+    description: "Beetroot burgers",
+    weight: 1,
+)
+Product.create(
+    shop_id: 4,
+    name: "Fake sausages",
+    price: 2,
+    quantity: 9,
+    description: "Linda McCartney sausages",
+    weight: 0.5,
+)
+Product.create(
+    shop_id: 4,
+    name: "Chickpea burgers",
+    price: 5,
+    quantity: 6,
+    description: "Burgers made from chickpeas",
+    weight: 2,
+)
+Product.create(
+    shop_id: 4,
+    name: "Quorn burgers",
+    price: 2,
+    quantity: 8,
+    description: "Burgers made from quorn",
+    weight: 1.8,
+)
+
 # WALTER, THE CONSUMER
 walter = User.create(
     first_name: "Walter",
@@ -168,3 +228,54 @@ walter = User.create(
     password_confirmation: "topsecret",
     shopkeeper: false
 )
+
+# FAKER for businesses
+
+100.times do 
+    User.create(
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.email,
+        password: "topsecret",
+        password_confirmation: "topsecret",
+        shopkeeper: true
+    )
+end
+
+num = 6
+100.times do
+    Shop.create(
+        user_id: num,
+        name: Faker::Restaurant.type,
+        category: "Food",
+        address: Faker::Address.city,
+        description: Faker::Restaurant.description
+    )
+    num += 1
+end
+
+# new_num = 6
+# 1000.times do
+#     Product.create(
+#     shop_id: 5,
+#     name: "Quorn burgers",
+#     price: 2,
+#     quantity: 8,
+#     description: "Burgers made from quorn",
+#     weight: 1.8,
+# )
+new_num = 6
+100.times do
+    10.times do
+        Product.create(
+            shop_id: new_num,
+            name: Faker::Food.dish,
+            price: Faker::Number.between(from: 1, to: 20),
+            quantity: Faker::Number.between(from: 1, to: 8),
+            description: Faker::Food.description,
+            weight: Faker::Number.between(from: 1, to: 7),
+        )
+    end
+    new_num += 1
+end
+

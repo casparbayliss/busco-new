@@ -14,7 +14,7 @@
   <body>
     <!-- <%= request.location.city %> -->
     <%= render 'shared/flashes' %>
-    <!-- <%= render 'shared/navbar' %> -->
+    <%= render 'shared/navbar' unless @disable_nav %>
     <%= yield %>
   </body>
 </html>

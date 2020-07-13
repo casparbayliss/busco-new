@@ -1,0 +1,27 @@
+#banner-and-map {
+    display: flex;
+    flex-direction: row;
+}
+
+#banner-banner {
+    height: 350px;
+    width: 45%;
+    background-image: linear-gradient(rgba(87, 87, 87, 0.5), rgba(82, 82, 82, 0.5)), url(womanshopping.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+#banner-caption-div {
+    .banner-caption {
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    padding-top: 230px;
+    padding-left: 30px;
+}
+#map-div {
+    padding-top: 0px;
+    padding-left: 0px;
+}

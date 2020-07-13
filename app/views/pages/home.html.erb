@@ -1,6 +1,9 @@
+<%= request.location.city %>
 <div class="container" id="frontpage-main-container">
     <!-- devise sign up/sign in buttons -->
-    <%= render 'components/sign-in-buttons' %>
+    <% unless user_signed_in? %>
+        <%= render 'components/sign-in-buttons' %>
+    <% end %>
     <!-- custom navbar that I created just for the front page -->
     <%= render 'components/custom-navbar' %>
     <!-- render the mouse animation -->
@@ -18,6 +21,6 @@
         <%= render 'components/section-three-div' %>
     </section>
     <section id="section-four">
-        <h1>Section 4</h1>
+        <%= render 'components/section-four-div' %>
     </section>
 </div>
