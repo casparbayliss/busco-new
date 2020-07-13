@@ -1,7 +1,7 @@
 <div id="map-div">
     <div id="shop-list">
         <div id="shop-list-title">Shops within a 10 mile radius</div>
-        <% @shops.each do |shop| %>
+        <% @nearbyshops.each do |shop| %>
             <div class="shop-list-item">
                 <div class="shop-list-shop-name"><%= shop.name %></div>
                 <div class="shop-list-shop-distance">5 miles away</div>
