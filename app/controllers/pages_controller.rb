@@ -5,8 +5,10 @@ class PagesController < ApplicationController
     def home
         @shops = policy_scope(Shop).order(created_at: :desc)
         @shops = Shop.geocoded
-        location = request.location.city
-        @nearbyshops = Shop.near(location, 10)
+        # location = request.location.city
+        @nearbyshops = Shop.near(request.location, 10)
+        # @nearbyshops = Shop.near(request.location.city, 10)
+        
 
         @markers = @shops.map do |shop|
             {
