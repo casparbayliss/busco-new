@@ -6,7 +6,7 @@ class PagesController < ApplicationController
         @shops = policy_scope(Shop).order(created_at: :desc)
         @shops = Shop.geocoded
         location = request.location.city
-        @nearbyshops = Shop.near(location, 50)
+        @nearbyshops = Shop.near(location, 10)
 
         @markers = @shops.map do |shop|
             {
