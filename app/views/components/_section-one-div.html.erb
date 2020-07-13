@@ -1,13 +1,13 @@
 
 <div class="hero-image-div">
-    <h1>Welcome to Busco <%= request.location %></h1>
+    <h1>Welcome to Busco </h1>
     <h3>Search for nearby products</h3>
     <h3>Returning consumers to the local high street</h3>
     <form novalidate="novalidate" action="/" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
         <div class="search-form-control form-group">
-            <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+            <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search for local products near <%= request.location.city %>"/>
             <button name="button" type="submit" class="btn btn-flat animate__animated animate__shakeX" id="home-search-box">
-            <i class="fas fa-search"></i> Search for local products
+            <i class="fas fa-search"></i>
             </button>
         </div>
     </form>
