@@ -22,9 +22,9 @@ class PagesController < ApplicationController
     def frontpage
         @shops = policy_scope(Shop).order(created_at: :desc)
         @shops = Shop.geocoded
-        location = request.location
-        # @nearbyshops = Shop.near([location.latitude, location.longitude], 200, :order => "distance")
-        @nearbyshops = Shop.near("Godalming", 20000, :order => "distance")
+        @location = request.location
+        @nearbyshops = Shop.near([@location.latitude, @location.longitude], 200, :order => "distance")
+        # @nearbyshops = Shop.near([location.latitude, location.longitude], 20000, :order => "distance")
         @markers = @shops.map do |shop|
             {
                 lat: shop.latitude,
