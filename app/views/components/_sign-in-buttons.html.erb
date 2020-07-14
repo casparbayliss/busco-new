@@ -1,4 +1,8 @@
 <div id="sign-in-buttons">
-    <%= link_to "Sign in", new_user_session_path, class: "btn btn-dark" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-dark" %>
+    <% if user_signed_in? %>
+        <div id="home-page-username"><%= current_user.first_name %></div>
+    <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-dark" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-dark" %>
+    <% end %>
 </div>

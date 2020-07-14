@@ -1,0 +1,11 @@
+
+
+<% if user_signed_in? %>
+    <% if current_user.shopkeeper == true %>
+        <h1>Hello</h1>
+    <% elsif current_user.shopkeeper == false %>
+        <%= render 'consumer/home' %>
+    <% end %>
+<% else %>
+    <%= render 'consumer/home' %>
+<% end %>

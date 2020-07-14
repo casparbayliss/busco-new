@@ -1,8 +1,6 @@
 <div class="container" id="frontpage-main-container">
     <!-- devise sign up/sign in buttons -->
-    <% unless user_signed_in? %>
-        <%= render 'components/sign-in-buttons' %>
-    <% end %>
+    <%= render 'components/sign-in-buttons' %>
     <!-- custom navbar that I created just for the front page -->
     <%= render 'components/custom-navbar' %>
     <!-- render the mouse animation -->

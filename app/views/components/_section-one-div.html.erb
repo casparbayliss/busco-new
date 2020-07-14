@@ -11,5 +11,14 @@
             </button>
         </div>
     </form>
-    <h3>Or simply <%= link_to "enter Busco", buyer_home_path, id: "enter-busco"%></h3>
+    <h3>Or simply 
+    <% if user_signed_in? %>
+        <% if current_user.shopkeeper == true %>
+            <%= link_to "enter Busco", frontpage_path, id: "enter-busco"%></h3>
+        <% elsif current_user.shopkeeper == false %>
+            <%= link_to "enter Busco", frontpage_path, id: "enter-busco"%></h3>
+        <% end %>
+    <% else %>
+        <%= link_to "enter Busco", frontpage_path, id: "enter-busco"%></h3>
+    <% end %></h3>
 </div>

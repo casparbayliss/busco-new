@@ -1,11 +1,13 @@
-class BuyerController < ApplicationController
-    skip_before_action :authenticate_user!, only: :home
+class ConsumerController < ApplicationController
+    skip_before_action :authenticate_user!, only: :frontpage
     # Gonna need to change this later to only authorise buyers
-    def home
-        skip_authorization
+    def frontpage
+        # skip_authorization
         @shops = policy_scope(Shop).order(created_at: :desc)
+        authorize @shops
         @shops = Shop.geocoded
-        @markers = @shops.map do |shop|
+
+        @markers = shops.map do |shop|
             {
                 lat: shop.latitude,
                 lng: shop.longitude
