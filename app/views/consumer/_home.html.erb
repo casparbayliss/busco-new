@@ -21,6 +21,7 @@
         <div class="shops-scroll-item">
             <div class="shop-scroll-name"><%= shop.name %></div>
             <div class="shop-scroll-category"><%= shop.category %></div>
+            <div class="shop-scroll-category"><%= Geocoder::Calculations.distance_between([@location.latitude, @location.longitude], [shop.latitude, shop.longitude]) %> miles away</div>
         </div>
     <% end %>
 </div>
