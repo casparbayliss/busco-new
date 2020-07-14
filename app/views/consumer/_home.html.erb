@@ -13,9 +13,14 @@
         </div>
     </div>
 </div>
-<div class="horizontal-scroll-wrapper squares">
+<div id="nearby-shops-row">
+    <div id="nearby-shops-title">Nearby shops</div>
+</div>
+<div id="local-shops-scroll-div">
     <% @nearbyshops[0..20].each do |shop| %>
-        <div>Item</div>
+        <div class="shops-scroll-item">
+            <div class="shop-scroll-name"><%= shop.name %></div>
+            <div class="shop-scroll-category"><%= shop.category %></div>
+        </div>
     <% end %>
 </div>
-
