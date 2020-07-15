@@ -254,16 +254,6 @@ num = 6
     num += 1
 end
 
-# new_num = 6
-# 1000.times do
-#     Product.create(
-#     shop_id: 5,
-#     name: "Quorn burgers",
-#     price: 2,
-#     quantity: 8,
-#     description: "Burgers made from quorn",
-#     weight: 1.8,
-# )
 new_num = 6
 100.times do
     10.times do
@@ -278,4 +268,13 @@ new_num = 6
     end
     new_num += 1
 end
+
+# FAKER FOR BLOG POSTS
+
+Blogpost.create(
+    name: "Why I created Busco",
+    contents: "This is my first blog post",
+    publish_date: Date.strptime("13/07/2020", "%d/%m/%Y"),
+    user_id: 1
+)
 

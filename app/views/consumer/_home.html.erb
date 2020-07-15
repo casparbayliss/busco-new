@@ -13,15 +13,58 @@
         </div>
     </div>
 </div>
-<div id="nearby-shops-row">
-    <div id="nearby-shops-title">Nearby shops</div>
+<div class="nearby-shops-row">
+    <div class="nearby-shops-title">Nearby shops</div>
 </div>
 <div id="local-shops-scroll-div">
-    <% @nearbyshops[0..20].each do |shop| %>
-        <div class="shops-scroll-item">
-            <div class="shop-scroll-name"><%= shop.name %></div>
-            <div class="shop-scroll-category"><%= shop.category %></div>
-            <div class="shop-scroll-category"><%= (Geocoder::Calculations.distance_between([@location.latitude, @location.longitude], [shop.latitude, shop.longitude]).round(2)) %> mile(s) away</div>
-        </div>
+    <% if @nearbyshops.length > 0 %>
+        <% @nearbyshops[0..20].each do |shop| %>
+            <div class="shops-scroll-item">
+                <div class="shop-scroll-name"><%= shop.name %></div>
+                <div class="shop-scroll-category"><%= shop.category %></div>
+                <div class="shop-scroll-category"><%= (Geocoder::Calculations.distance_between([@location.latitude, @location.longitude], [shop.latitude, shop.longitude]).round(2)) %> miles away</div>
+            </div>
+        <% end %>
+    <% else %>
+        <div class="no-shops-nearby">No shops nearby</div>
+    <% end %>
+</div>
+<div class="nearby-shops-row">
+    <div class="nearby-shops-title">Nearby products</div>
+</div>
+<div id="local-products-div">
+    <% if @nearbyshops.length > 0 %>
+        <% @nearbyshops[0..10].each do |shop| %>
+            <% if shop.products.length > 3 %>
+                <% shop.products[0..2].each do |product| %>
+                    <div class="card product-card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title product-title"><%= product.name %></h5>
+                            <p class="card-text product-text"><%= shop.name %></p>
+                            <p class="card-text"><%= product.price %></p>
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        <% end %>
+    <% else %>
+        <div class="no-shops-nearby">No products nearby</div>
+    <% end %>
+</div>
+<div class="nearby-shops-row">
+    <div class="nearby-shops-title">Recent blog posts</div>
+</div>
+<div id="recent-blog-posts">
+    <% if @blogposts.length > 0 %>
+        <% @blogposts[0..6].each do |blogpost| %>
+            <div class="blogposts-scroll-item">
+                <div class="blogposts-scroll-name"><%= blogpost.name %></div>
+                <div class="blogposts-scroll-publish_date"><%= blogpost.publish_date %></div>
+                <div class="blogposts-scroll-contents"><%= blogpost.contents %></div>
+            </div>
+        <% end %>
+    <% else %>
+        <div class="no-shops-nearby">No shops nearby</div>
     <% end %>
 </div>
