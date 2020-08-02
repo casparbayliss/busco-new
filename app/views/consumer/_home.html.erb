@@ -15,8 +15,7 @@
 </div>
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">Nearby shops</div>
-</div><!-- 
-<h1>Temp div</h1>
+</div>
 <div id="local-shops-scroll-div">
     <% if @nearbyshops.length > 0 %>
         <% @nearbyshops[0..20].each do |shop| %>
@@ -27,13 +26,21 @@
             </div>
         <% end %>
     <% else %>
-        <div class="no-shops-nearby">No shops nearby</div>
+        <div id="no-shops-nearby">No shops nearby</div>
     <% end %>
 </div>
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">Nearby products</div>
 </div>
-<div id="local-products-div">
+
+<div class="product-card">
+  <%= image_tag("heroimage.jpg", class: "product-card-image") %>
+  <div class="product-container">
+    <h4><b>John Doe</b></h4>
+    <p>Architect & Engineer</p>
+  </div>
+</div>
+<!-- <div id="local-products-div">
     <% if @nearbyshops.length > 0 %>
         <% @nearbyshops[0..10].each do |shop| %>
             <% if shop.products.length > 3 %>
@@ -50,23 +57,18 @@
             <% end %>
         <% end %>
     <% else %>
-        <div class="no-shops-nearby">No products nearby</div>
+        <div id="no-products-nearby">No products nearby</div>
     <% end %>
-</div>
+</div> -->
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">Recent blog posts</div>
 </div>
 <div id="recent-blog-posts">
     <% if @blogposts.length > 0 %>
         <% @blogposts[0..6].each do |blogpost| %>
-            <div class="blogposts-scroll-item">
-                <div class="blogposts-scroll-name"><%= blogpost.name %></div>
-                <div class="blogposts-scroll-publish_date"><%= blogpost.publish_date %></div>
-                <div class="blogposts-scroll-contents"><%= blogpost.contents %></div>
-            </div>
+            <%= render 'blogposts/show', blogpost: blogpost %>
         <% end %>
     <% else %>
         <div class="no-shops-nearby">No shops nearby</div>
     <% end %>
 </div>
--->

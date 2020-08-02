@@ -173,7 +173,7 @@ charlie = User.create(
 Shop.create(
     user_id: 4,
     name: "Charlie's vegan store",
-    category: "Food",
+    category: "Food and drink",
     address: "33 Jermyn Street, London",
     description: "Vegan produce"
 )
@@ -242,39 +242,113 @@ walter = User.create(
     )
 end
 
-num = 6
-100.times do
+# Creat 25 shops under category "Food and drink"
+food_num = 6
+25.times do
     Shop.create(
-        user_id: num,
-        name: Faker::Restaurant.type,
-        category: "Food",
+        user_id: food_num,
+        name: Faker::Company.name,
+        subheading: Faker::Company.catch_phrase,
+        category: "Food and drink",
         address: Faker::Address.city,
-        description: Faker::Restaurant.description
+        description: Faker::Lorem.sentence,
+        phone_number: Faker::PhoneNumber.cell_phone
     )
-    num += 1
-end
-
-new_num = 6
-100.times do
     10.times do
         Product.create(
-            shop_id: new_num,
-            name: Faker::Food.dish,
-            price: Faker::Number.between(from: 1, to: 20),
-            quantity: Faker::Number.between(from: 1, to: 8),
+            shop_id: food_num,
+            name: Faker::Food.ingredient,
+            price: Faker::Commerce.price,
+            quantity: Faker::Number.between(from: 1, to: 7),
             description: Faker::Food.description,
-            weight: Faker::Number.between(from: 1, to: 7),
+            weight: Faker::Number.between(from: 1, to: 7)
         )
     end
-    new_num += 1
+    food_num += 1
 end
+
+# Create 25 shops under category "Restaurant"
+restaurant_num = 6
+25.times do
+    Shop.create(
+        user_id: restaurant_num,
+        name: Faker::Restaurant.name,
+        subheading: Faker::Restaurant.type,
+        category: "Restaurant",
+        address: Faker::Address.city,
+        description: Faker::Restaurant.description,
+        phone_number: Faker::PhoneNumber.cell_phone
+    )
+    10.times do
+        Product.create(
+            shop_id: restaurant_num,
+            name: Faker::Food.dish,
+            price: Faker::Commerce.price,
+            quantity: 1,
+            description: Faker::Food.description,
+        )
+    end
+    restaurant_num += 1
+end
+
+# Create 25 shops under category "Clothing"
+clothing_num = 6
+25.times do
+    Shop.create(
+        user_id: clothing_num,
+        name: Faker::Company.name,
+        subheading: Faker::Company.catch_phrase,
+        category: "Clothing",
+        address: Faker::Address.city,
+        description: Faker::Lorem.sentence,
+        phone_number: Faker::PhoneNumber.cell_phone
+    )
+    10.times do
+        Product.create(
+            shop_id: clothing_num,
+            name: Faker::Commerce.product_name,
+            price: Faker::Commerce.price,
+            quantity: Faker::Number.between(from: 1, to: 7),
+            description: Faker::Commerce.material,
+            weight: Faker::Number.between(from: 1, to: 7)
+        )
+    end
+    clothing_num += 1
+end
+
+# Create 25 shops under category "Items"
+items_num = 6
+25.times do
+    Shop.create(
+        user_id: items_num,
+        name: Faker::Company.name,
+        subheading: Faker::Company.catch_phrase,
+        category: "Items",
+        address: Faker::Address.city,
+        description: Faker::Restaurant.description,
+        phone_number: Faker::PhoneNumber.cell_phone
+    )
+    10.times do
+        Product.create(
+            shop_id: items_num,
+            name: Faker::Appliance.equipment,
+            price: Faker::Commerce.price,
+            quantity: 1,
+            description: Faker::Lorem.sentence,
+            weight: Faker::Number.between(from: 1, to: 7)
+        )
+    end
+    items_num += 1
+end
+
 
 # FAKER FOR BLOG POSTS
 
-Blogpost.create(
-    name: "Why I created Busco",
-    contents: "This is my first blog post",
-    publish_date: Date.strptime("13/07/2020", "%d/%m/%Y"),
-    user_id: 1
-)
-
+5.times do
+    Blogpost.create(
+        name: Faker::Lorem.sentence,
+        contents: Faker::Lorem.paragraph(sentence_count: 20),
+        publish_date: Date.strptime("13/07/2020", "%d/%m/%Y"),
+        user_id: 1
+    )
+end
