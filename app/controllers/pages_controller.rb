@@ -6,7 +6,7 @@ class PagesController < ApplicationController
         @shops = policy_scope(Shop).order(created_at: :desc)
         @shops = Shop.geocoded
         location = request.location
-        @nearbyshops = Shop.near([location.latitude, location.longitude], 10)
+        @nearbyshops = Shop.near([location.latitude, location.longitude], 20)
         # @nearbyshops = Shop.near(request.location.city, 10)
         
 
@@ -17,6 +17,7 @@ class PagesController < ApplicationController
             }
         end
         @disable_nav = true
+        @disable_footer = true
     end
 
     def frontpage
