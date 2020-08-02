@@ -14,12 +14,17 @@
     </div>
 </div>
 <div class="nearby-shops-row">
+    <div class="nearby-shops-title">How it works</div>
+</div>
+<%= render 'components/how-it-works' %>
+<div class="nearby-shops-row">
     <div class="nearby-shops-title">Nearby shops</div>
 </div>
 <div id="local-shops-scroll-div">
     <% if @nearbyshops.length > 0 %>
         <% @nearbyshops[0..20].each do |shop| %>
             <div class="shops-scroll-item">
+                <%= image_tag("heroimage.jpg", class: "shop-card-image") %>
                 <div class="shop-scroll-name"><%= shop.name %></div>
                 <div class="shop-scroll-category"><%= shop.category %></div>
                 <div class="shop-scroll-category"><%= (Geocoder::Calculations.distance_between([@location.latitude, @location.longitude], [shop.latitude, shop.longitude]).round(2)) %> miles away</div>

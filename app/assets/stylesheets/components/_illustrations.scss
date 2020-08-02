@@ -1,0 +1,46 @@
+#how-it-works {
+    display: inline-block;
+    width: 100%;
+}
+
+#how-it-works-illustration {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 45%;
+    float: left;
+}
+
+#how-it-works-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 55%;
+    float: right;
+}
+
+.illustration {
+    height: 300px;
+    width: auto;
+}
+
+.how-it-works-text {
+    padding: 20px;
+}
+
+.first-fade {
+    animation-duration: 1s;
+    animation-delay: 2s;
+}
+
+.second-fade {
+    animation-duration: 1s;
+    animation-delay: 3s;
+}
+
+.third-fade {
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
