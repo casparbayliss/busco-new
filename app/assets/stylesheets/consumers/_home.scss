@@ -4,10 +4,9 @@
 }
 
 .shops-scroll-item {
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: auto;
     color: black;
-    padding: 5px;
     margin: 5px;
     display: inline-block;
     box-shadow: 2px 2px 2px rgb(216, 216, 216);
@@ -23,6 +22,12 @@
         font-size: 1rem;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    .shop-card-image {
+        height: 150px;
+        width: 200px;
+        
     }
 }
 
@@ -80,6 +85,24 @@
     justify-content: center;
 }
 
+.how-it-works-text {
+    padding: 20px;
+}
+
+.first-fade {
+    animation-duration: 1s;
+    animation-delay: 2s;
+}
+
+.second-fade {
+    animation-duration: 1s;
+    animation-delay: 3s;
+}
+
+.third-fade {
+    animation-duration: 1s;
+    animation-delay: 4s;
+}
 
 
 
