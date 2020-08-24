@@ -32,14 +32,18 @@
 </div>
 
 <div class="nearby-shops-row">
+    <div class="nearby-shops-title">How it works</div>
+</div>
+<%= render 'components/how-it-works' %>
+<div class="nearby-shops-row">
     <div class="nearby-shops-title">Nearby shops</div>
 </div>
 <div id="local-shops-scroll-div">
     <% if @nearbyshops.length > 0 %>
         <% @nearbyshops[0..20].each do |shop| %>
             <div class="shops-scroll-item">
-              <%= image_tag("heroimage.jpg", class: "shop-card-image") %>
-                <div class="shop-scroll-name"><b><%= shop.name %></b></div>
+                <%= image_tag("heroimage.jpg", class: "shop-card-image") %>
+                <div class="shop-scroll-name"><%= shop.name %></div>
                 <div class="shop-scroll-category"><%= shop.category %></div>
                 <div class="shop-scroll-category"><%= (Geocoder::Calculations.distance_between([@location.latitude, @location.longitude], [shop.latitude, shop.longitude]).round(2)) %> miles away</div>
             </div>
@@ -52,31 +56,28 @@
     <div class="nearby-shops-title">Nearby products</div>
 </div>
 
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-2">This is the search bar</div>
-        <div class="col-8">
-            <div id="local-products-div">
-                <div class="card-deck">
-                <% if @nearbyshops.length > 0 %>
-                    <% @nearbyshops[0..10].each do |shop| %>
-                        <% if shop.products.length > 3 %>
-                            <% shop.products[0..2].each do |product| %>
-                                <div class="product-card">
-                                    <div class="product-container">
-                                        <%= image_tag("heroimage.jpg", class: "product-card-image") %>
-                                        <div class="product-card-text">
-                                            <h4><b><%= product.name %></b></h4>
-                                            <p><%= shop.name %></p>
-                                            <p class="card-text"><%= product.price %></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            <% end %>
-                        <% end %>
-                    <% end %>
-                <% else %>
-                    <div id="no-products-nearby">No products nearby</div>
+<div class="product-card">
+    <div class="product-card-image-div">
+        <%= image_tag("heroimage.jpg", class: "product-card-image") %>
+        <div class="product-container">
+            <h4><b>John Doe</b></h4>
+            <p>Architect & Engineer</p>
+        </div>
+    </div>
+</div>
+<!-- <div id="local-products-div">
+    <% if @nearbyshops.length > 0 %>
+        <% @nearbyshops[0..10].each do |shop| %>
+            <% if shop.products.length > 3 %>
+                <% shop.products[0..2].each do |product| %>
+                    <div class="card product-card" style="width: 18rem;">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title product-title"><%= product.name %></h5>
+                            <p class="card-text product-text"><%= shop.name %></p>
+                            <p class="card-text"><%= product.price %></p>
+                        </div>
+                    </div>
                 <% end %>
                 </div>
             </div>

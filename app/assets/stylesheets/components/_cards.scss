@@ -3,8 +3,13 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 200px;
+<<<<<<< HEAD
     border-radius: 10px;
     margin: 10px;
+=======
+    height: 220px;
+    border-radius: 5px;
+>>>>>>> master
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -16,9 +21,10 @@
   .product-container {
   }
 
-  .product-card-image {
-      height: auto;
+  .product-card-image-div {
+      height: 150px;
       width: 200px;
+<<<<<<< HEAD
   }
 
   .product-card-text {
@@ -26,7 +32,14 @@
   }
 
 
+=======
+>>>>>>> master
 
+      .product-card-image {
+        width: 100%;
+        object-fit: contain;
+      }
+  }
 
 .map-card {
 
