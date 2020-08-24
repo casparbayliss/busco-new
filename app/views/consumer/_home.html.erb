@@ -13,6 +13,24 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="input-group">
+                <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Search for products">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Shops</a>
+                        <a class="dropdown-item" href="#">Items</a>
+                        <a class="dropdown-item" href="#">Food</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">How it works</div>
 </div>
@@ -39,11 +57,13 @@
 </div>
 
 <div class="product-card">
-  <%= image_tag("heroimage.jpg", class: "product-card-image") %>
-  <div class="product-container">
-    <h4><b>John Doe</b></h4>
-    <p>Architect & Engineer</p>
-  </div>
+    <div class="product-card-image-div">
+        <%= image_tag("heroimage.jpg", class: "product-card-image") %>
+        <div class="product-container">
+            <h4><b>John Doe</b></h4>
+            <p>Architect & Engineer</p>
+        </div>
+    </div>
 </div>
 <!-- <div id="local-products-div">
     <% if @nearbyshops.length > 0 %>
@@ -59,12 +79,11 @@
                         </div>
                     </div>
                 <% end %>
-            <% end %>
-        <% end %>
-    <% else %>
-        <div id="no-products-nearby">No products nearby</div>
-    <% end %>
-</div> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">Recent blog posts</div>
 </div>
