@@ -1,3 +1,4 @@
+<!-- The map and hero image -->
 <div id="banner-and-map">
     <div id="banner-banner">
         <div id='banner-caption-div'>
@@ -31,10 +32,14 @@
     </div>
 </div>
 
+<!-- how it works section -->
+
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">How it works</div>
 </div>
 <%= render 'components/how-it-works' %>
+
+<!-- showing nearby shops -->
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">Nearby shops</div>
 </div>
@@ -52,47 +57,61 @@
         <div id="no-shops-nearby">No shops nearby</div>
     <% end %>
 </div>
+
+<!-- showing nearby products -->
 <div class="nearby-shops-row">
     <div class="nearby-shops-title">Nearby products</div>
 </div>
-
-<div class="product-card">
-    <div class="product-card-image-div">
-        <%= image_tag("heroimage.jpg", class: "product-card-image") %>
-        <div class="product-container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-        </div>
-    </div>
-</div>
-<!-- <div id="local-products-div">
-    <% if @nearbyshops.length > 0 %>
-        <% @nearbyshops[0..10].each do |shop| %>
-            <% if shop.products.length > 3 %>
-                <% shop.products[0..2].each do |product| %>
-                    <div class="card product-card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title product-title"><%= product.name %></h5>
-                            <p class="card-text product-text"><%= shop.name %></p>
-                            <p class="card-text"><%= product.price %></p>
-                        </div>
+<div class="container">
+    <div class="row">
+        <div class="col-2">Search bar</div>
+        <div class="col-10">
+            <div id="local-products-div">
+                <% if @nearbyshops.length > 0 %>
+                    <div class="card-group">
+                        <% @nearbyshops[0..10].each do |shop| %>
+                            <% if shop.products.length > 3 %>
+                                <% shop.products[0..2].each do |product| %>
+                                    <div class="card">
+                                        <img class="card-img-top" src="..." alt="Card image cap">
+                                        <div class="card-body">
+                                        <h5 class="card-title"><%= product.name %></h5>
+                                        <p class="card-text"><%= product.description %></p>
+                                        <p class="card-text"><%= product.price %></p>
+                                        <p class="card-text"><%= product.shop.name %></p>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        <% end %>
                     </div>
                 <% end %>
-                </div>
             </div>
         </div>
-        <div class="col-1"></div>
     </div>
-<div class="nearby-shops-row">
-    <div class="nearby-shops-title">Recent blog posts</div>
-</div>
-<div id="recent-blog-posts">
-    <% if @blogposts.length > 0 %>
-        <% @blogposts[0..6].each do |blogpost| %>
-            <%= render 'blogposts/show', blogpost: blogpost %>
+
+<!-- showing recent blog posts -->
+
+    <div class="nearby-shops-row">
+        <div class="nearby-shops-title">Recent blog posts</div>
+    </div>
+    <div id="recent-blog-posts">
+        <% if @blogposts.length > 0 %>
+            <div class="card-deck">
+                <% @blogposts[0..2].each do |blogpost| %>
+                    <div class="card">
+                        <img class="card-img-top" src="..." alt="Card image cap">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= blogpost.name %></h5>
+                        <p class="card-text"><%= blogpost.contents %></p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>                
+                <% end %>
+            </div>
+
+        <% else %>
+            <div class="no-shops-nearby">No shops nearby</div>
         <% end %>
-    <% else %>
-        <div class="no-shops-nearby">No shops nearby</div>
-    <% end %>
+    </div>
 </div>

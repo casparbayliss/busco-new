@@ -3,13 +3,8 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 200px;
-<<<<<<< HEAD
-    border-radius: 10px;
-    margin: 10px;
-=======
     height: 220px;
     border-radius: 5px;
->>>>>>> master
   }
   
   /* On mouse-over, add a deeper shadow */
@@ -24,16 +19,6 @@
   .product-card-image-div {
       height: 150px;
       width: 200px;
-<<<<<<< HEAD
-  }
-
-  .product-card-text {
-    margin: 0px 5px 0px 5px;
-  }
-
-
-=======
->>>>>>> master
 
       .product-card-image {
         width: 100%;
@@ -94,4 +79,8 @@
 #local-shops-scroll-div::-webkit-scrollbar-thumb {
   border-radius: 0px;
   background-color:rgb(190, 190, 190);
+}
+
+.card {
+  min-width: 200px;
 }
