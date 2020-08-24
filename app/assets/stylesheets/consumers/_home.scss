@@ -1,40 +1,3 @@
-<<<<<<<< HEAD:app/assets/stylesheets/consumers/_home.scss
-#local-shops-scroll-div {
-    overflow: auto;
-    white-space: nowrap;
-}
-
-.shops-scroll-item {
-    width: 200px;
-    height: auto;
-    color: black;
-    margin: 5px;
-    display: inline-block;
-    box-shadow: 2px 2px 2px rgb(216, 216, 216);
-    margin-bottom: 20px;
-
-    .shop-scroll-name {
-        font-size: 1.2rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .shop-scroll-category {
-        font-size: 1rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .shop-card-image {
-        height: 150px;
-        width: 200px;
-        
-    }
-}
-
-
-========
->>>>>>>> master:app/assets/stylesheets/consumers/_frontpage.scss
 #local-shops-scroll-div::-webkit-scrollbar-track {
     border-radius: 0px;
     background-color: #FFFFFF;
@@ -88,32 +51,12 @@
     justify-content: center;
 }
 
-<<<<<<<< HEAD:app/assets/stylesheets/consumers/_home.scss
-.how-it-works-text {
-    padding: 20px;
-}
-
-.first-fade {
-    animation-duration: 1s;
-    animation-delay: 2s;
-}
-
-.second-fade {
-    animation-duration: 1s;
-    animation-delay: 3s;
-}
-
-.third-fade {
-    animation-duration: 1s;
-    animation-delay: 4s;
-========
 .input-group {
     margin: 50px;
 }
 
 #nearby-products-container {
     max-width: 1200px;
->>>>>>>> master:app/assets/stylesheets/consumers/_frontpage.scss
 }
 
 
